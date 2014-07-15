@@ -1,0 +1,32 @@
+<title>Angular Hotels</title>
+<h2>Hello, Welcome to Angular Hotels!</h2>
+<div ng-controller="menuCtrl">
+  <!-- <form>
+    <input type="text" ng-model="name">
+    {{name}}
+  </form> -->
+  <button ng-click="addMenuItem()">Add Menu Item</button>
+  <button ng-click="menuCreationDone()">Done with creating menu</button>
+  <div ng-show="showMenu">
+    <table border="1px solid;">
+      <thead>
+        <th>#</th>
+        <th>Item</th>
+        <th>Cost</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in menuItems track by $index">
+          <td>{{$index + 1}}</td>
+          <td><input type="text" ng-model="item.name" value={{item.name}}></input></td>
+          <td><input type="text" ng-model="item.cost" value={{item.cost}}></input></td>
+          <td><button ng-click="removeMenuItem(item)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div ng-show="showOrderMarkUp">
+    <button>Create Order</button>
+  </div>
+</div>
